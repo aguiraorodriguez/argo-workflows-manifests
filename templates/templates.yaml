@@ -4,6 +4,7 @@ metadata:
   name: workflow-template-whalesay-template
 spec:
   entrypoint: whalesay-template
+  serviceAccountName: argo-workflows-workflow
   templates:
   - name: whalesay-template
     inputs:
@@ -19,6 +20,7 @@ kind: WorkflowTemplate
 metadata:
   name: workflow-template-random-fail-template
 spec:
+  serviceAccountName: argo-workflows-workflow
   templates:
   - name: random-fail-template
     retryStrategy:
@@ -34,6 +36,7 @@ kind: WorkflowTemplate
 metadata:
   name: workflow-template-inner-steps
 spec:
+  serviceAccountName: argo-workflows-workflow
   templates:
   - name: whalesay-template
     inputs:
@@ -80,6 +83,7 @@ kind: WorkflowTemplate
 metadata:
   name: workflow-template-inner-dag
 spec:
+  serviceAccountName: argo-workflows-workflow
   templates:
   - name: whalesay-template
     inputs:
@@ -129,6 +133,7 @@ kind: WorkflowTemplate
 metadata:
   name: workflow-template-submittable
 spec:
+  serviceAccountName: argo-workflows-workflow
   entrypoint: whalesay-template
   arguments:
     parameters:
